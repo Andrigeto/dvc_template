@@ -1,0 +1,12 @@
+stages:
+  ml_pipe:
+    cmd: python src/main_exp.py
+    deps:
+      - src/main_exp.py
+      - data/raw/train.csv
+      - data/raw/test.csv
+    outs:
+      - out/processed_data.csv
+    metrics:
+      - metrics/metrics.json:
+          cache: false
