@@ -7,6 +7,11 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 import numpy as np
+import yaml
+
+# Загрузка параметров из YAML
+with open('params.yaml', 'r') as f:
+    params = yaml.safe_load(f)
 
 
 df_train = pd.read_csv('data/raw/train.csv')
@@ -18,7 +23,7 @@ X_test.drop(columns=['Id', 'Alley', 'PoolQC', 'Fence', 'MiscFeature'], inplace=T
 
 
 X_train, X_val, y_train, y_val = train_test_split(
-    df_train, df_train['SalePrice'], test_size=0.2, random_state=42
+    df_train, df_train['SalePrice'], test_size=params['split']['test_size'], random_state=42
 )
 
 
@@ -56,7 +61,7 @@ catboost_model.fit(
     X_train, y_train,
     eval_set=(X_val, y_val),
     use_best_model=True,
-    early_stopping_rounds=50
+    early_stopping_rounds=params['model']['early_stopping_rounds']
 )
 submit['SalePrice'] = catboost_model.predict(X_test)
 
@@ -71,7 +76,7 @@ sub.to_csv('out/processed_data.csv',index=False)
 metrics = {
     'mae': 1,
     'mse': 2,
-    'rmse': 3,
+    'rmse': 33,
     'r2': 4
 }
 
