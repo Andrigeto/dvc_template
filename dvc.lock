@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  ml_pipe:
+    cmd: python src/main_exp.py
+    deps:
+    - path: data/raw/test.csv
+      hash: md5
+      md5: dcec4b79bf9c7317bd9e17789bf888f0
+      size: 451405
+    - path: data/raw/train.csv
+      hash: md5
+      md5: 80ccab65fb115cbad143dbbd2bcd5577
+      size: 460676
+    - path: src/main_exp.py
+      hash: md5
+      md5: 3806432f87d5df7eb295530b0ea9051b
+      size: 2457
+    outs:
+    - path: metrics/metrics.json
+      hash: md5
+      md5: 0e18e5d5c0cf51ac8a9da061ac8c6b7c
+      size: 58
+    - path: out/processed_data.csv
+      hash: md5
+      md5: c21b6df00aadf543b15daa18b2657df0
+      size: 34498
