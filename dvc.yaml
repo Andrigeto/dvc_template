@@ -9,4 +9,4 @@ stages:
       - out/processed_data.csv
     metrics:
       - metrics/metrics.json:
-          cache: false
+          cache: True
