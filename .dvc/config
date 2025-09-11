@@ -1,0 +1,4 @@
+[core]
+    remote = metabase
+['remote "metabase"']
+    url = /Users/andrejbatutin/meta_base
