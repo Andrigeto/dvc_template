@@ -9,8 +9,8 @@ stages:
       size: 451405
     - path: data/raw/train.csv
       hash: md5
-      md5: 80ccab65fb115cbad143dbbd2bcd5577
-      size: 460676
+      md5: 186cabff9fdfb826d06487de01b5eeb4
+      size: 216883
     - path: src/main_exp.py
       hash: md5
       md5: dfd5e63fbb7a4dbe6f504351679445aa
@@ -22,5 +22,5 @@ stages:
       size: 59
     - path: out/processed_data.csv
       hash: md5
-      md5: c21b6df00aadf543b15daa18b2657df0
-      size: 34498
+      md5: 1bef5d028518bdf301ecb9a75b2bc69f
+      size: 34442
