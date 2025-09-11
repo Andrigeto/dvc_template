@@ -1,0 +1,10 @@
+# params.yaml
+split:
+  test_size: 0.2
+  random_state: 42
+  
+model:
+  eval_metric: 'RMSE'
+  random_seed: 42
+  verbose: 100
+  early_stopping_rounds: 50

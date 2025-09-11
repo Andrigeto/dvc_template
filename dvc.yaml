@@ -5,6 +5,9 @@ stages:
       - src/main_exp.py
       - data/raw/train.csv
       - data/raw/test.csv
+    params:
+      - split.test_size
+      - model.early_stopping_rounds
     outs:
       - out/processed_data.csv
     metrics:
