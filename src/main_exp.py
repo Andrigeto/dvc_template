@@ -71,7 +71,7 @@ sub.to_csv('out/processed_data.csv',index=False)
 metrics = {
     'mae': 1,
     'mse': 2,
-    'rmse': 3,
+    'rmse': 33,
     'r2': 4
 }
 
