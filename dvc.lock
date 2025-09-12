@@ -18,7 +18,7 @@ stages:
     params:
       params.yaml:
         model.early_stopping_rounds: 50
-        split.test_size: 0.2
+        split.test_size: 0.5
     outs:
     - path: metrics/metrics.json
       hash: md5
@@ -26,5 +26,5 @@ stages:
       size: 59
     - path: out/processed_data.csv
       hash: md5
-      md5: 1bef5d028518bdf301ecb9a75b2bc69f
-      size: 34442
+      md5: 4169039e603919dd7afc8e67d2da3251
+      size: 34469
