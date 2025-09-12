@@ -7,6 +7,9 @@ stages:
       - data/raw/test.csv
     outs:
       - out/processed_data.csv
+    params:
+      - split.test_size
+      - model.early_stopping_rounds
     metrics:
       - metrics/metrics.json:
           cache: True
