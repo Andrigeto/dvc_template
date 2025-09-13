@@ -43,8 +43,8 @@ categorical_transformer = Pipeline(steps=[
 
 preprocessor = ColumnTransformer(
     transformers=[
-        ('num', numeric_transformer, numeric_features),
-        # ('cat', categorical_transformer, categorical_features)
+        # ('num', numeric_transformer, numeric_features),
+        ('cat', categorical_transformer, categorical_features)
     ])
 
 X_train = preprocessor.fit_transform(X_train)
