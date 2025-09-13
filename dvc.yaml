@@ -13,3 +13,9 @@ stages:
     metrics:
       - metrics/metrics.json:
           cache: True
+# Добавьте этот раздел для графиков (отдельно от stages)
+plots:
+  - metrics/metrics.json:
+      x: learn
+      y: validation
+      title: Learn vs Validation
