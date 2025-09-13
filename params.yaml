@@ -1,6 +1,6 @@
 # params.yaml
 split:
-  test_size: 0.99
+  test_size: 0.313
   random_state: 42
 
 model:
