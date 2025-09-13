@@ -31,20 +31,20 @@ numeric_features = df_train.select_dtypes(include=['int64', 'float64']).columns.
 categorical_features = df_train.select_dtypes(include=['object', 'bool']).columns
 
 numeric_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='mean')),  # Заполнение пропусков средним значением
+    # ('imputer', SimpleImputer(strategy='mean')),  # Заполнение пропусков средним значением
     ('scaler', RobustScaler()),
     # ('scaler', StandardScaler()),
 ])
 
 categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='most_frequent')),  # Заполнение пропусков наиболее частым значением
+    # ('imputer', SimpleImputer(strategy='most_frequent')),  # Заполнение пропусков наиболее частым значением
     ('ordinal', OrdinalEncoder(handle_unknown='use_encoded_value', unknown_value=-1))
 ])
 
 preprocessor = ColumnTransformer(
     transformers=[
         ('num', numeric_transformer, numeric_features),
-        # ('cat', categorical_transformer, categorical_features)
+        ('cat', categorical_transformer, categorical_features)
     ])
 
 X_train = preprocessor.fit_transform(X_train)
