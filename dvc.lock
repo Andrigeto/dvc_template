@@ -13,18 +13,18 @@ stages:
       size: 216883
     - path: src/main_exp.py
       hash: md5
-      md5: 76df02307d5b05528c83bd7d5871f73c
-      size: 2723
+      md5: 699df26cc56599d9676c9159f2debcfa
+      size: 2721
     params:
       params.yaml:
         model.early_stopping_rounds: 50
-        split.test_size: 0.99
+        split.test_size: 0.313
     outs:
     - path: metrics/metrics.json
       hash: md5
-      md5: 23d2418702e061feb809e68e387427c0
-      size: 70
+      md5: cd64f5078f811af3733812df3f146de0
+      size: 71
     - path: out/processed_data.csv
       hash: md5
-      md5: 1a3b4e5f5f9ea0d4b099deaae591b8c6
-      size: 34573
+      md5: f02bcd46d9fe75a7446f048712c16227
+      size: 34509
